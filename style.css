@@ -1,17 +1,20 @@
-/* Base Reset & Fonts */
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fefefe;
-  color: #333;
-  line-height: 1.8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fffdfa;
+  color: #2c2c2c;
+  line-height: 1.75;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Layout */
+/* Container */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -21,66 +24,90 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 3rem 2rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid #eee6e6;
 }
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   color: #b00020;
-  font-weight: 800;
-  margin-bottom: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+  transition: color 0.3s ease;
+}
+header h1:hover {
+  color: #8b0015;
 }
 header .tagline {
+  font-size: 1.2rem;
   color: #666;
-  font-size: 1.1rem;
+  font-style: italic;
+  letter-spacing: 0.05em;
 }
 
-/* Section Headings */
+/* Section Titles */
 h2 {
   color: #b00020;
-  font-size: 1.75rem;
   font-weight: 700;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
-  border-left: 4px solid #b00020;
-  padding-left: 0.5rem;
+  border-left: 5px solid #b00020;
+  padding-left: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* Section Content */
+/* Sections */
 section {
   margin-bottom: 3.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f0e8e8;
 }
 
-section p,
-section ul {
-  margin-top: 0.5rem;
+/* Paragraphs and lists */
+p, ul {
+  margin-top: 0.6rem;
+  color: #444444;
 }
-
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.4rem;
+  list-style-type: disc;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+li {
+  margin-bottom: 0.7rem;
 }
 
-/* Project Links - Minimal Look */
+/* Strong tags for emphasis */
+strong {
+  color: #b00020;
+  font-weight: 700;
+}
+
+/* Project Links: elegant underline on hover */
 .project-links {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
+  gap: 0.8rem;
+  margin-top: 0.6rem;
 }
 .project-links a {
   color: #b00020;
-  text-decoration: none;
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  text-decoration: none;
   position: relative;
-  transition: color 0.2s ease;
+  padding-bottom: 2px;
+  transition: color 0.25s ease;
 }
 .project-links a::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
-  bottom: -2px;
   width: 100%;
-  height: 1.5px;
+  height: 2px;
+  bottom: 0;
+  left: 0;
   background-color: #b00020;
   transform: scaleX(0);
   transform-origin: left;
@@ -93,28 +120,49 @@ ul {
   transform: scaleX(1);
 }
 
-/* Contact Links */
+/* Contact links */
 .links {
   list-style: none;
   padding: 0;
+  margin-top: 1rem;
 }
 .links li {
   margin-bottom: 0.75rem;
 }
 .links a {
   color: #b00020;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 500;
+  transition: color 0.3s ease;
 }
 .links a:hover {
   text-decoration: underline;
+  color: #8b0015;
 }
 
 /* Footer */
 footer {
   text-align: center;
   font-size: 0.9rem;
-  color: #888;
-  border-top: 1px solid #e5e5e5;
+  color: #999;
+  border-top: 1px solid #eee6e6;
   padding: 1.5rem 0;
+  font-style: italic;
+  letter-spacing: 0.05em;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  .project-links a {
+    font-size: 1rem;
+  }
 }
