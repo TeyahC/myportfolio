@@ -2,55 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Teyah's Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
-    <h1>Teyah's Portfolio</h1>
-    <p>Welcome! Learn more about me, my skills, projects, and how to contact me.</p>
+    <div class="container">
+      <h1>Teyah's Portfolio</h1>
+      <p class="tagline">Aspiring Software Engineer | Cat Lover | Creative Coder</p>
+    </div>
   </header>
 
-  <section id="about-me">
-    <h2>About Me</h2>
-    <p>I am currently learning full stack development through an IBM course. My hobbies include cat sitting, coding, and exploring new tech.</p>
-  </section>
+  <main class="container">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I’m Teyah – currently completing an IBM Full Stack Developer course. I love building creative and useful projects. Outside of tech, I enjoy baking, travelling, and looking after my Maine Coons.</p>
+    </section>
 
-  <section id="education-skills">
-    <h2>Education & Skills</h2>
-    <ul>
-      <li>GCSEs</li>
-      <li>A Levels</li>
-      <li>IBM Full Stack Software Developer Course</li>
-    </ul>
-    <p>Skills: HTML, CSS, JavaScript, React, basic Python</p>
-  </section>
+    <section id="education-skills">
+      <h2>Education & Skills</h2>
+      <ul>
+        <li><strong>GCSEs:</strong> (Your subjects/grades)</li>
+        <li><strong>A-Levels:</strong> (Relevant ones)</li>
+        <li><strong>IBM Full Stack Developer Certificate</strong></li>
+        <li><strong>Skills:</strong> HTML, CSS, JavaScript, React, Node.js, Git, Python</li>
+      </ul>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><a href="pawsatyours.html">PawsAtYours - Cat Sitting Website</a></li>
-      <li><a href="car-dealership.html">Car Dealership Website (IBM Course)</a></li>
-      <li><a href="restaurant-pos.html">Restaurant POS System (A Levels)</a></li>
-    </ul>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project-links">
+        <a href="paws.html" class="project-card">🐾 Paws At Yours</a>
+        <a href="car-dealership.html" class="project-card">🚗 Car Dealership App</a>
+        <a href="restaurant-pos.html" class="project-card">🍽️ Restaurant POS System</a>
+      </div>
+    </section>
 
-  <section id="contact-info">
-    <h2>Contact & Info</h2>
-    <ul>
-      <li><a href="https://github.com/Teyahc" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="cv.html" target="_blank">View My CV</a></li>
-      <li><a href="https://pawsatyours.example.com" target="_blank" rel="noopener">PawsAtYours Cat Sitting</a></li>
-      <li>Phone: <a href="tel:+1234567890">+1 234 567 890</a></li>
-    </ul>
-  </section>
+    <section id="contact">
+      <h2>Contact & Links</h2>
+      <ul class="links">
+        <li><a href="https://github.com/TeyahC" target="_blank">GitHub</a></li>
+        <li><a href="https://teyahc.github.io/pawsatyours/" target="_blank">Cat Sitting Website</a></li>
+        <li><a href="cv.html">View My CV</a></li>
+        <li><a href="www.linkedin.com/in/teyah-chamberlain-472a42293" target="_blank">LinkedIn</a></li>
+        <li>Phone: 07392 833665</li>
+      </ul>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2025 Teyah</p>
+    <div class="container">
+        <p>&copy; 2025 Teyah. All rights reserved.</p>
+        <p>Made with ❤️ by Teyah</p>
+    </div>
   </footer>
-
 </body>
 </html>
