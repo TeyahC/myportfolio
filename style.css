@@ -149,3 +149,84 @@ footer {
     font-size: 1.4rem;
   }
 }
+
+/* Project Walkthrough page - image gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.gallery img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Section Subheadings */
+h3 {
+  color: #a30f1a;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #c1121f;
+  padding-bottom: 0.3rem;
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 700px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery img {
+    max-width: 90%;
+  }
+}
+
+
+/* Container for bottom two cards side by side */
+.bottom-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* Each bottom card takes roughly half width */
+.bottom-cards > section {
+  flex: 1;
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bottom-cards > section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure the inner content (like .project-links) has normal spacing */
+.project-links {
+  flex-direction: column; /* keep project cards stacked vertically inside */
+  gap: 1rem;
+}
+
+/* Responsive: stack vertically on smaller screens */
+@media (max-width: 700px) {
+  .bottom-cards {
+    flex-direction: column;
+  }
+}
+
