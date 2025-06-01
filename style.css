@@ -285,3 +285,16 @@ h3 {
   background-color: #fcbf49;
 }
 
+.code-block {
+  background: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-top: 2rem;
+}
+
+.code-block h3 {
+  margin-top: 0;
+}
+
+
