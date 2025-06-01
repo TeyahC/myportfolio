@@ -40,6 +40,11 @@ header .tagline {
   font-style: italic;
 }
 
+main.container {
+  margin-top: -20px; /* pulls it up */
+}
+
+
 /* Sections */
 section {
   background: #fff;
