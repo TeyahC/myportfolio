@@ -273,7 +273,7 @@ h3 {
 .back-button a {
   display: inline-block;
   padding: 12px 24px;
-  background-color: #ffd166;
+  background-color: #e80404;
   color: #333;
   text-decoration: none;
   font-weight: bold;
@@ -282,7 +282,7 @@ h3 {
 }
 
 .back-button a:hover {
-  background-color: #fcbf49;
+  background-color: #fe0202;
 }
 
 .code-block {
@@ -298,3 +298,23 @@ h3 {
 }
 
 
+/* Code Snippet Images */
+.code-block img {
+  max-width: 100%;
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 10px;
+  margin-top: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.code-block img:hover {
+  transform: scale(1.02);
+}
+
+/* Optional: center them if you want */
+.code-block {
+  text-align: center;
+}
