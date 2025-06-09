@@ -56,7 +56,6 @@
         <h2>Project Functionality</h2>
 
         <div class="screenshot-block">
-        <p></p>
           <h3>Login Page</h3>
           <p>Staff must log in before accessing the POS system.</p>
           <img src="images/restaurant-login.png" alt="Login page" />
@@ -119,63 +118,45 @@
         </section>
 
         <section class="code-snippets">
-            <h2>Code Snippets</h2>
-            <p>Here are a few examples of code used in the POS system:</p>
+            <h2>Key Code Snippets</h2>
+            <p>Below are a few core code snippets that highlight the functionality and logic behind the restaurant POS system.</p>
 
-            <div class="code-example">
-                <h3>Connecting to the Database (databasehandling.php)</h3>
+            <div class="code-block">
+                <h3>🔐 Hashed Password Storage</h3>
+                <p>To protect user security, passwords are hashed before being stored in the database:</p>
                 <pre><code>
-            &lt;?php
-            function pdo_connect_mysql() {
-                $host = 'localhost';
-                $db   = 'restaurant_pos';
-                $user = 'root';
-                $pass = '';
-                $charset = 'utf8mb4';
-
-                $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-                $options = [
-                    PDO::ATTR_ERRMODE            =&gt; PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
-                    PDO::ATTR_EMULATE_PREPARES   =&gt; false,
-                ];
-                try {
-                    return new PDO($dsn, $user, $pass, $options);
-                } catch (\PDOException $e) {
-                    throw new \PDOException($e-&gt;getMessage(), (int)$e-&gt;getCode());
-                }
-            }
-            ?&gt;
+            $hashedPassword = password_hash($new_password, PASSWORD_DEFAULT);
+            $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
+            $stmt->execute([$hashedPassword, $userId]);
                 </code></pre>
             </div>
 
-            <div class="code-example">
-                <h3>Restricting Access Based on Role</h3>
+            <div class="code-block">
+                <h3>🚫 Access Control for Staff</h3>
+                <p>This logic ensures that only users with the admin role can access restricted pages like user management:</p>
                 <pre><code>
-            &lt;?php
-            session_start();
             if ($_SESSION['role'] !== 'admin') {
                 echo "Access Denied";
                 exit;
             }
-            ?&gt;
                 </code></pre>
             </div>
 
-            <div class="code-example">
-                <h3>Deleting a Receipt (deleteReceipt.php)</h3>
+            <div class="code-block">
+                <h3>🧾 Generate PDF Receipt</h3>
+                <p>Staff members can view receipts and generate a downloadable PDF version for printing or saving:</p>
                 <pre><code>
-            &lt;?php
-            if (isset($_GET['id'])) {
-                $id = $_GET['id'];
-                $stmt = $pdo-&gt;prepare("DELETE FROM receipts WHERE id = ?");
-                $stmt-&gt;execute([$id]);
-                header("Location: viewReceipts.php");
-            }
-            ?&gt;
+            require('fpdf/fpdf.php');
+            $pdf = new FPDF();
+            $pdf->AddPage();
+            $pdf->SetFont('Arial', 'B', 16);
+            $pdf->Cell(40, 10, 'Receipt Details');
+            // Add dynamic receipt data here
+            $pdf->Output();
                 </code></pre>
             </div>
             </section>
+
 
 
 
