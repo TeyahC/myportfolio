@@ -350,3 +350,30 @@ h3 {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+
+.code-snippets {
+  margin: 2rem 0;
+}
+
+.code-example {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+pre {
+  background: #1e1e1e;
+  color: #f8f8f8;
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 8px;
+  display: inline-block;
+  max-width: 90%;
+  text-align: left;
+}
+
+code {
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+}

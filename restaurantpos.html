@@ -98,7 +98,7 @@
             <p>There is a System Control page that includes links to view receipts and access the User Management section. From there, admins can manage user accounts, including adding, editing, or removing users. If a staff member (non-admin) tries to access the user management features, they will see an "Access Denied" message. </p>
             <img src="images/systemcontrol.png" alt="Add or change users " />
             <img src="images/denied.png" alt="Add or change users " />
-            <h5>User Management </h5>
+            <h2>User Management </h2>
             <p>Admins, such as the manager, can add or edit user accounts and update passwords. All user information is stored securely in a database, with passwords hashed for protection </p>
             <div class = "photo-pair">
                     <img src="images/Register Staff.png" alt="Register staff page " />
@@ -108,7 +108,7 @@
                     <img src="images/Addorchangeusers.png" alt="Add or change users " />
                     <img src="images/Password security.png" alt="Hashed Passwords " />
                 </div>
-                <h5>Receipt Management </h5>
+                <h2>Receipt Management </h2>
                 <p>All staff members have access to view receipts. Once viewed, they also have the option to delete receipts or download them as PDF files for record-keeping.</p>
                 <div class = "photo-pair">
                     <img src="images/receipts.png" alt="Receipts Page " />
@@ -118,44 +118,64 @@
         </section>
 
         <section class="code-snippets">
-        <h2>Key Code Snippets</h2>
-        <p>Below are a few core code snippets that highlight the functionality and logic behind the restaurant POS system.</p>
+            <h2>Code Snippets</h2>
+            <p>Here are a few examples of code used in the POS system:</p>
 
-        <div class="code-block">
-            <h3>🔐 Hashed Password Storage</h3>
-            <p>To protect user security, passwords are hashed before being stored in the database:</p>
-            <pre><code>
-        $hashedPassword = password_hash($new_password, PASSWORD_DEFAULT);
-        $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
-        $stmt->execute([$hashedPassword, $userId]);
-            </code></pre>
-        </div>
+            <div class="code-example">
+                <h3>Connecting to the Database (databasehandling.php)</h3>
+                <pre><code>
+            &lt;?php
+            function pdo_connect_mysql() {
+                $host = 'localhost';
+                $db   = 'restaurant_pos';
+                $user = 'root';
+                $pass = '';
+                $charset = 'utf8mb4';
 
-        <div class="code-block">
-            <h3>🚫 Access Control for Staff</h3>
-            <p>This logic ensures that only users with the admin role can access restricted pages like user management:</p>
-            <pre><code>
-        if ($_SESSION['role'] !== 'admin') {
-            echo "Access Denied";
-            exit;
-        }
-            </code></pre>
-        </div>
+                $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+                $options = [
+                    PDO::ATTR_ERRMODE            =&gt; PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE =&gt; PDO::FETCH_ASSOC,
+                    PDO::ATTR_EMULATE_PREPARES   =&gt; false,
+                ];
+                try {
+                    return new PDO($dsn, $user, $pass, $options);
+                } catch (\PDOException $e) {
+                    throw new \PDOException($e-&gt;getMessage(), (int)$e-&gt;getCode());
+                }
+            }
+            ?&gt;
+                </code></pre>
+            </div>
 
-        <div class="code-block">
-            <h3>🧾 Generate PDF Receipt</h3>
-            <p>Staff members can view receipts and generate a downloadable PDF version for printing or saving:</p>
-            <pre><code>
-        require('fpdf/fpdf.php');
-        $pdf = new FPDF();
-        $pdf->AddPage();
-        $pdf->SetFont('Arial', 'B', 16);
-        $pdf->Cell(40, 10, 'Receipt Details');
-        // Add dynamic receipt data here
-        $pdf->Output();
-            </code></pre>
-        </div>
-        </section>
+            <div class="code-example">
+                <h3>Restricting Access Based on Role</h3>
+                <pre><code>
+            &lt;?php
+            session_start();
+            if ($_SESSION['role'] !== 'admin') {
+                echo "Access Denied";
+                exit;
+            }
+            ?&gt;
+                </code></pre>
+            </div>
+
+            <div class="code-example">
+                <h3>Deleting a Receipt (deleteReceipt.php)</h3>
+                <pre><code>
+            &lt;?php
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                $stmt = $pdo-&gt;prepare("DELETE FROM receipts WHERE id = ?");
+                $stmt-&gt;execute([$id]);
+                header("Location: viewReceipts.php");
+            }
+            ?&gt;
+                </code></pre>
+            </div>
+            </section>
+
 
 
       <section class="github-link">
