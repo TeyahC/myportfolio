@@ -288,6 +288,7 @@ h3 {
 
 .back-button a:hover {
   background-color: #fe0202;
+  color: white;
 }
 
 .code-block {
