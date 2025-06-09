@@ -116,6 +116,47 @@
             </div>
         </section>
 
+        <section class="code-snippets">
+        <h2>Key Code Snippets</h2>
+        <p>Below are a few core code snippets that highlight the functionality and logic behind the restaurant POS system.</p>
+
+        <div class="code-block">
+            <h3>🔐 Hashed Password Storage</h3>
+            <p>To protect user security, passwords are hashed before being stored in the database:</p>
+            <pre><code>
+        $hashedPassword = password_hash($new_password, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
+        $stmt->execute([$hashedPassword, $userId]);
+            </code></pre>
+        </div>
+
+        <div class="code-block">
+            <h3>🚫 Access Control for Staff</h3>
+            <p>This logic ensures that only users with the admin role can access restricted pages like user management:</p>
+            <pre><code>
+        if ($_SESSION['role'] !== 'admin') {
+            echo "Access Denied";
+            exit;
+        }
+            </code></pre>
+        </div>
+
+        <div class="code-block">
+            <h3>🧾 Generate PDF Receipt</h3>
+            <p>Staff members can view receipts and generate a downloadable PDF version for printing or saving:</p>
+            <pre><code>
+        require('fpdf/fpdf.php');
+        $pdf = new FPDF();
+        $pdf->AddPage();
+        $pdf->SetFont('Arial', 'B', 16);
+        $pdf->Cell(40, 10, 'Receipt Details');
+        // Add dynamic receipt data here
+        $pdf->Output();
+            </code></pre>
+        </div>
+        </section>
+
+
       <section class="github-link">
         <h2>View on GitHub</h2>
         <p>
