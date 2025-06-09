@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Restaurant POS System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<!-- Lightbox for enlarged images -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged preview" />
+</div>
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.style.display = 'none';
+  }
+</script>
+
+<body>
+  <header>
+    <h1>Restaurant POS System</h1>
+    <p class="subheading">Computing Coursework Project using PHP & MySQL</p>
+  </header>
+
+  <div class="container">
+    <main class="content">
+      <section class="description">
+        <p>This full-stack Restaurant Point of Sale (POS) system was created for my Computing coursework. It helps staff manage tables, take orders, and check out customers. It uses PHP and MySQL for dynamic backend functionality.</p>
+      </section>
+
+      <section class="tech-stack">
+        <h2>Tech Stack</h2>
+        <ul>
+          <li>Frontend: HTML, CSS</li>
+          <li>Backend: PHP</li>
+          <li>Database: MySQL</li>
+          <li>Environment: XAMPP (Apache + MySQL)</li>
+        </ul>
+      </section>
+
+      <section class="screenshots gallery">
+        <h2>Project Functionality</h2>
+
+        <div class="screenshot-block">
+          <h3>Login Page</h3>
+          <p>Staff must log in before accessing the POS system.</p>
+          <img src="images/restaurant-login.png" alt="Login page" />
+        </div>
+
+        <div class="screenshot-block">
+          <h3>Table Overview</h3>
+          <p>After login, the staff selects the table and number of guests. Once the table is active it turns green and shows the number of people at the table as the number of poeple that were entered</p>
+           <div class = "photo-triple">
+                <img src="images/tables1.png" alt="View of tables" />
+                <img src="images/tables2.png" alt="Asking how many people at table" />
+                <img src="images/tables3.png" alt="Table now its active" />
+            </div>
+        </div>
+
+        <div class="screenshot-block">
+          <h3>Order Page</h3>
+          <p>Each table has its own order view to manage products and quantities. As you add items to the basket the stock changes appropriately. This is all stored in the database</p>
+          <img src="images/order.png" alt="Order page" />
+        </div>
+
+        <div class="screenshot-block">
+          <h3>Product Management</h3>
+          <p>Everyone can add and edit menu items from the product management page. It also shows the list of producs and here you can update or delete the products</p>
+          <img src="images/add+edit_products.png" alt="Product management page" />
+        </div>
+
+        <div class="screenshot-block">
+          <h3>Checkout</h3>
+          <p>Once the order is complete, staff can review and clear the table after payment. There is a cash or card onption and there is option to spilt the bill too. </p>
+           <div class = "photo-triple">
+                <img src="images/Checkout1.png" alt="Checkout" />
+                <img src="images/checkout22.png" alt="Afe" />
+                <img src="images/checkout3.png" alt="Table now its active" />
+            </div>
+        </div>
+      </section>
+
+      <section class="github-link">
+        <h2>View on GitHub</h2>
+        <p>
+          <a href="https://github.com/TeyahC/RestaurantPOS" target="_blank">
+            View the full project code on GitHub
+          </a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Teyah Chamberlain</p>
+  </footer>
+</body>
+</html>
