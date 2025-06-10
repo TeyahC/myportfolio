@@ -308,11 +308,6 @@ h3 {
   transform: scale(1.02);
 }
 
-/* Optional: center them if you want */
-.code-block {
-  text-align: center;
-}
-
 /* Lightbox background */
 .lightbox {
   display: none;
@@ -348,7 +343,6 @@ h3 {
 
 .code-example {
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 pre {
