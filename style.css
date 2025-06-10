@@ -279,22 +279,6 @@ h3 {
   margin-top: 0;
 }
 
-
-/* Code Snippet Images */
-.code-block img {
-  max-width: 100%;
-  width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  border-radius: 10px;
-  margin-top: 1rem;
-  transition: transform 0.3s ease;
-}
-
-.code-block img:hover {
-  transform: scale(1.02);
-}
-
 /* Lightbox background */
 .lightbox {
   display: none;
