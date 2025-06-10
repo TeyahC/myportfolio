@@ -307,6 +307,13 @@ h3 {
   to { opacity: 1; transform: scale(1); }
 }
 
+.code-block img {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
 
 .code-snippets {
   margin: 2rem 0;
