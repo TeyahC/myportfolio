@@ -54,7 +54,7 @@
 
       <section class="screenshots gallery">
         <h2>Project Functionality</h2>
-
+        <p>This section showcases the main features of the restaurant POS system, including table management, product selection, receipt handling, and admin controls. You'll find explanations alongside screenshots to demonstrate how staff and managers interact with the system in real time.</p>
         <div class="screenshot-block">
           <h3>Login Page</h3>
           <p>Staff must log in before accessing the POS system.</p>
@@ -122,41 +122,39 @@
             <p>Below are a few core code snippets that highlight the functionality and logic behind the restaurant POS system.</p>
 
             <div class="code-block">
-                <h3>🔐 Hashed Password Storage</h3>
+                <h3>Hashed Password Storage</h3>
                 <p>To protect user security, passwords are hashed before being stored in the database:</p>
-                <pre><code>
-            $hashedPassword = password_hash($new_password, PASSWORD_DEFAULT);
-            $stmt = $pdo->prepare("UPDATE users SET password = ? WHERE id = ?");
-            $stmt->execute([$hashedPassword, $userId]);
-                </code></pre>
+                <img src="images/hashpasswordcode.png" alt="code for password hashing" />
             </div>
 
             <div class="code-block">
-                <h3>🚫 Access Control for Staff</h3>
+                <h3>Access Control for Staff</h3>
                 <p>This logic ensures that only users with the admin role can access restricted pages like user management:</p>
-                <pre><code>
-            if ($_SESSION['role'] !== 'admin') {
-                echo "Access Denied";
-                exit;
-            }
-                </code></pre>
+                <img src="images/admin access code.png" alt="code for admin accessing" />
             </div>
 
             <div class="code-block">
-                <h3>🧾 Generate PDF Receipt</h3>
+                <h3>Generate PDF Receipt</h3>
                 <p>Staff members can view receipts and generate a downloadable PDF version for printing or saving:</p>
-                <pre><code>
-            require('fpdf/fpdf.php');
-            $pdf = new FPDF();
-            $pdf->AddPage();
-            $pdf->SetFont('Arial', 'B', 16);
-            $pdf->Cell(40, 10, 'Receipt Details');
-            // Add dynamic receipt data here
-            $pdf->Output();
-                </code></pre>
+                <div class = "photo-pair">
+                    <img src="images/receiptpdf.png" alt="Code for turning receipt to a pdf" />
+                    <img src="images/reciptpdf2.png" alt="Code for turning receipt to a pdf" />
+                </div>
             </div>
-            </section>
 
+            <div class="code-block">
+                <h3>Smart Order Handling</h3>
+                <p>This code checks whether a table already has an open order. If not, it creates one. It then either updates the quantity of an existing product or adds it as a new item. Finally, it decreases the product stock and redirects the user back to the table view.</p>
+                <img src="images/itemstoordercode.png" alt="code for order handling" />
+            </div>
+            
+
+        </section>
+
+        
+        <div class="back-button">
+        <a href="index.html">← Back to Main Screen</a>
+        </div>
 
 
 
