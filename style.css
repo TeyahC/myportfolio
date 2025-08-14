@@ -369,7 +369,7 @@ code {
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 900px;
   /* keep it from getting too wide on desktop */
   margin: 0 auto;
   aspect-ratio: 16 / 9;
