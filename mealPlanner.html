@@ -1,136 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meal Planner App</title>
     <link rel="stylesheet" href="style.css" />
-</head>
+  </head>
 
-<!-- Lightbox for enlarged images -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <!-- Lightbox for enlarged images -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Enlarged preview" />
-</div>
-<script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+  </div>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll('.gallery img').forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.style.display = 'flex';
-            });
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = "flex";
         });
+      });
     });
 
     function closeLightbox() {
-        lightbox.style.display = 'none';
+      lightbox.style.display = "none";
     }
-</script>
+  </script>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <h1>Project Walkthrough - Meal Planner App</h1>
-            <p class="subheading">Personal Project – Progressive Web App with React</p>
-        </header>
-        <div class="back-button">
-            <a href="index.html">← Back to Main Screen</a>
-        </div>
+      <header>
+        <h1>Project Walkthrough - Meal Planner App</h1>
+        <p class="subheading">
+          Personal Project – Progressive Web App with React
+        </p>
+      </header>
+      <div class="back-button">
+        <a href="index.html">← Back to Main Screen</a>
+      </div>
 
-        <main class="content">
-            <section class="description">
-                <p>
-                    This Meal Planner App is a mobile-friendly progressive web app designed to help users plan meals,
-                    manage pantry inventory, filter recipes by allergies, and generate dynamic shopping lists that scale
-                    with portion sizes. It supports saving custom recipes, works offline, and includes a dark mode for
-                    comfortable viewing.
-                </p>
-            </section>
+      <main class="content">
+        <section class="description">
+          <p>
+            This Meal Planner App is a mobile-friendly progressive web app
+            designed to help users plan meals, manage pantry inventory, filter
+            recipes by allergies, and generate dynamic shopping lists that scale
+            with portion sizes. It supports saving custom recipes, works
+            offline, and includes a dark mode for comfortable viewing.
+          </p>
+        </section>
 
-            <section class="tech-stack">
-                <h2>Tech Stack</h2>
-                <ul>
-                    <li>Languages: JavaScript, HTML, CSS</li>
-                    <li>Framework: React</li>
-                    <li>Build Tool: Vite</li>
-                    <li>Data Storage: localStorage</li>
-                    <li>Environment: Localhost (runs on development server)</li>
-                </ul>
-            </section>
+        <section class="tech-stack">
+          <h2>Tech Stack</h2>
+          <ul>
+            <li>Languages: JavaScript, HTML, CSS</li>
+            <li>Framework: React</li>
+            <li>Build Tool: Vite</li>
+            <li>Data Storage: localStorage</li>
+            <li>Environment: Localhost (runs on development server)</li>
+          </ul>
+        </section>
 
-            <section class="screenshots gallery">
-                <h2>Project Functionality</h2>
-                <p style="text-align: left;">
-                    This section highlights the main features of the Meal Planner App, including the weekly planner,
-                    recipe filtering, shopping list generation, and pantry inventory management.
-                </p>
+        <section class="screenshots gallery">
+          <h2>Project Functionality</h2>
+          <p style="text-align: left">
+            This section highlights the main features of the Meal Planner App,
+            including the weekly planner, recipe filtering, shopping list
+            generation, and pantry inventory management.
+          </p>
 
-                <div class="screenshot-block">
-                    <h3>Weekly Meal Planner</h3>
-                    <p>Plan breakfasts, lunches, dinners, and snacks for the week in a clear, mobile-friendly layout.
-                    </p>
-                    <div class="video-wrapper">
-                        <video controls preload="metadata" aria-label="Meal planner weekly view demo">
-                            <source src="images/mealplaner-weekly.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
-
-                <div class="screenshot-block">
-                    <h3>Recipe Filtering & Search</h3>
-                    <p>Find recipes based on available ingredients, allergy preferences, and meal type.</p>
-                    <div class="video-wrapper">
-                        <video controls preload="metadata" aria-label="Meal planner weekly view demo">
-                            <source src="images/mealplanner-recipes.mp4" type="video/mp4" />
-                            Your browser does not support the video tag.
-                        </video>
-
-                    </div>
-                </div>
-
-                <div class="screenshot-block">
-                    <h3>Smart Shopping List</h3>
-                    <p>Automatically generate a shopping list from planned meals, with quantities scaled to the number
-                        of portions.</p>
-                    <img src="images/mealplanner-shoppinglist.png" alt="Shopping list screenshot" />
-                </div>
-
-                <div class="screenshot-block">
-                    <h3>Pantry Inventory</h3>
-                    <p>Track what ingredients you already have to reduce waste and save money.</p>
-                    <img src="images/mealplanner-pantry.png" alt="Pantry inventory screenshot" />
-                </div>
-
-                <div class="screenshot-block">
-                    <h3>Offline & Installable</h3>
-                    <p>As a PWA, the app can be installed on devices and used offline for convenience.</p>
-                    <img src="images/mealplanner-offline.png" alt="PWA offline screenshot" />
-                </div>
-            </section>
-
-            <section class="github-link">
-                <h2>View the Project</h2>
-                <p>
-                    <a href="https://your-meal-planner-app.netlify.app" target="_blank">Live Demo</a> |
-                    <a href="https://github.com/yourusername/meal-planner-app" target="_blank">View Code on GitHub</a>
-                </p>
-            </section>
-
-            <div class="back-button">
-                <a href="index.html">← Back to Main Screen</a>
+          <div class="screenshot-block">
+            <h3>Weekly Meal Planner</h3>
+            <p>
+              Plan breakfasts, lunches, dinners, and snacks for the week in a
+              clear, mobile-friendly layout.
+            </p>
+            <div class="video-wrapper">
+              <video
+                controls
+                preload="metadata"
+                aria-label="Meal planner weekly view demo"
+              >
+                <source src="images/mealplaner-weekly.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
-        </main>
+          </div>
+
+          <div class="screenshot-block">
+            <h3>Recipe Filtering & Search</h3>
+            <p>
+              Find recipes based on available ingredients, allergy preferences,
+              and meal type.
+            </p>
+            <div class="video-wrapper">
+              <video
+                controls
+                preload="metadata"
+                aria-label="Meal planner weekly view demo"
+              >
+                <source src="images/mealplanner-recipes.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="screenshot-block">
+            <h3>Smart Shopping List</h3>
+            <p>
+              Automatically generate a shopping list from planned meals, with
+              quantities scaled to the number of portions.
+            </p>
+            <div class="video-wrapper">
+              <video
+                controls
+                preload="metadata"
+                aria-label="Meal planner shopping list demo"
+              >
+                <source
+                  src="images/mealplanner-shoppinglist.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="screenshot-block">
+            <h3>Pantry Inventory</h3>
+            <p>
+              Track what ingredients you already have to reduce waste and save
+              money.
+            </p>
+            <img
+              src="images/mealplanner-pantry.png"
+              alt="Pantry inventory screenshot"
+            />
+          </div>
+
+          <div class="screenshot-block">
+            <h3>Offline & Installable</h3>
+            <p>
+              As a PWA, the app can be installed on devices and used offline for
+              convenience.
+            </p>
+            <img
+              src="images/mealplanner-offline.png"
+              alt="PWA offline screenshot"
+            />
+          </div>
+        </section>
+
+        <section class="github-link">
+          <h2>View the Project</h2>
+          <p>
+            <a href="https://your-meal-planner-app.netlify.app" target="_blank"
+              >Live Demo</a
+            >
+            |
+            <a
+              href="https://github.com/yourusername/meal-planner-app"
+              target="_blank"
+              >View Code on GitHub</a
+            >
+          </p>
+        </section>
+
+        <div class="back-button">
+          <a href="index.html">← Back to Main Screen</a>
+        </div>
+      </main>
     </div>
 
     <footer>
-        <div class="container">
-            <p>Made by Teyah</p>
-        </div>
+      <div class="container">
+        <p>Made by Teyah</p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
