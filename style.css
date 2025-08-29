@@ -362,28 +362,20 @@ code {
 }
 
 .video-wrapper {
-  position: relative;
   width: 100%;
-  max-width: 900px;
-  /* keep it from getting too wide on desktop */
+  max-width: 900px; /* keep it from getting too wide on desktop */
   margin: 0 auto;
-  /* keeps shape on all screens */
-  background: #000;
-  /* nice backdrop while loading */
+  background: #000; /* backdrop while loading */
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Make the video fill the wrapper */
 .video-wrapper video {
-  position: absolute;
-  inset: 0;
   width: 100%;
-  height: 100%;
+  height: auto; /* preserves natural aspect ratio */
   display: block;
-  object-fit: cover;
-  /* feel free to change to 'contain' if you prefer letterboxing */
+  object-fit: contain; /* makes sure full video is shown */
 }
 
 /* Optional: small caption under video */
@@ -405,7 +397,7 @@ code {
   }
 }
 
-/* Respect Reduced Motion settings (avoid autoplay / heavy animations) */
+/* Respect Reduced Motion settings */
 @media (prefers-reduced-motion: reduce) {
   .video-wrapper video {
     animation: none !important;
@@ -413,7 +405,6 @@ code {
   }
 }
 
-/* If your page has a .gallery like the screenshots section, this keeps spacing consistent */
 .gallery .video-block {
   margin-top: 1.25rem;
 }
