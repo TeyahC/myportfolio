@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WesFest POS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <!-- Lightbox for enlarged images (if you ever add screenshots) -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged preview" />
+  </div>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = "flex";
+        });
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
+  </script>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Project Walkthrough – WesFest POS</h1>
+        <p class="subheading">
+          Personal Project – Progressive Web App with Square Integration
+        </p>
+      </header>
+      <div class="back-button">
+        <a href="index.html">← Back to Main Screen</a>
+      </div>
+
+      <main class="content">
+        <section class="description">
+          <p>
+            WesFest POS is a progressive web application (PWA) I built to handle
+            snack sales at festivals. The system was designed with both staff
+            and administrators in mind, making it easy to manage items, track
+            orders, and process payments quickly in a busy festival environment.
+            By integrating Square’s POS API, the app supported secure card
+            payments while remaining lightweight, mobile-friendly, and
+            easy-to-use on the night of the event.
+          </p>
+        </section>
+
+        <section class="tech-stack">
+          <h2>Tech Stack</h2>
+          <ul>
+            <li>Languages: JavaScript, HTML, CSS</li>
+            <li>Framework: React</li>
+            <li>Build Tool: Vite</li>
+            <li>Payments: Square POS API</li>
+            <li>Deployment: Progressive Web App (PWA)</li>
+          </ul>
+        </section>
+
+        <section class="screenshots gallery">
+          <h2>Project Functionality</h2>
+          <p style="text-align: left">
+            My partner’s parents were hosting a festival at their house and
+            wanted a fun “honesty snack station.” Guests could grab snacks
+            freely but also had the option to pay by card. After some research,
+            I decided to build a custom POS system tailored for the event.
+          </p>
+          <p style="text-align: left">
+            The system included an <strong>Admin Page</strong> for quickly
+            adding or removing products, and a <strong>Main POS Page</strong>
+            where guests could browse items, add them to their cart, and check
+            out using Square’s secure payment process. After checkout, the app
+            redirected back to the main page with an empty cart, ready for the
+            next order.
+          </p>
+
+          <div class="screenshot-block">
+            <h3>Admin Features</h3>
+            <p>
+              The admin dashboard allowed products to be added or removed
+              quickly to keep the snack station up to date throughout the
+              festival.
+            </p>
+            <div class="video-wrapper">
+              <video
+                controls
+                preload="metadata"
+                aria-label="WesFest POS admin demo"
+              >
+                <source src="videos/wesfest-admin-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          <div class="screenshot-block">
+            <h3>Main POS & Checkout</h3>
+            <p>
+              Guests could browse snacks, add them to the cart, and pay securely
+              via Square. After checkout, the cart cleared automatically for the
+              next person.
+            </p>
+            <div class="video-wrapper">
+              <video
+                controls
+                preload="metadata"
+                aria-label="WesFest POS checkout demo"
+              >
+                <source src="videos/wesfest-pos-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </section>
+
+        <section class="github-link">
+          <h2>View the Project</h2>
+          <p>
+            <a href="https://github.com/TeyahC/festival-pos" target="_blank"
+              >View Code on GitHub</a
+            >
+          </p>
+        </section>
+
+        <div class="back-button">
+          <a href="index.html">← Back to Main Screen</a>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Made by Teyah</p>
+      </div>
+    </footer>
+  </body>
+</html>
