@@ -7,7 +7,7 @@
 
 /* Fonts */
 body {
-  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #afafaf;
   color: #2a2a2a;
   font-size: 16px;
@@ -46,7 +46,6 @@ main.container {
   margin-top: -80px;
   /* pulls it up */
 }
-
 
 /* Sections */
 section {
@@ -215,7 +214,6 @@ h3 {
   }
 }
 
-
 /* Container for bottom two cards side by side */
 .bottom-cards {
   display: flex;
@@ -224,7 +222,7 @@ h3 {
 }
 
 /* Each bottom card takes roughly half width */
-.bottom-cards>section {
+.bottom-cards > section {
   flex: 1;
   background: #fff;
   border-radius: 20px;
@@ -233,7 +231,7 @@ h3 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.bottom-cards>section:hover {
+.bottom-cards > section:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
@@ -251,7 +249,6 @@ h3 {
     flex-direction: column;
   }
 }
-
 
 .code-block p {
   margin-bottom: 10px;
@@ -285,7 +282,6 @@ h3 {
   background-color: #ff0000;
   color: rgb(77, 77, 77);
 }
-
 
 /* Lightbox background */
 .lightbox {
@@ -355,7 +351,6 @@ code {
   white-space: pre-wrap;
 }
 
-
 /* Responsive video block */
 .video-block {
   margin: 1.25rem 0 2rem;
@@ -372,7 +367,6 @@ code {
   max-width: 900px;
   /* keep it from getting too wide on desktop */
   margin: 0 auto;
-  aspect-ratio: 16 / 9;
   /* keeps shape on all screens */
   background: #000;
   /* nice backdrop while loading */
