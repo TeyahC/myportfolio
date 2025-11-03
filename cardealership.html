@@ -1,137 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Car Dealership Review Website</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Dealership Review Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
+  <body>
+    <div class="container gallery">
+      <header>
+        <h1>Project Walkthrough - Car Dealership Review Website</h1>
+        <p class="tagline">
+          Final Project for IBM Full Stack Software Developer Certificate
+        </p>
+      </header>
+      <div class="back-button">
+        <a href="index.html">← Back to Main Screen</a>
+      </div>
 
-<body>
-  
-
-  <div class = "container gallery" >
-
-    <header>
-      <h1>Project Walkthrough - Car Dealership Review Website</h1>
-      <p class="tagline">Final Project for IBM Full Stack Software Developer Certificate</p>
-    </header>
-    <div class="back-button">
-            <a href="index.html">← Back to Main Screen</a>
-        </div>
-
-    <main class="content">
+      <main class="content">
         <section class="description">
-        <p>This full-stack web app allows users to browse car dealerships and submit reviews. Verified users can log in to leave comments and ratings, while anyone can explore dealership information. The platform uses Node.js, Express, MongoDB, and JavaScript to power both the front and back ends.</p>
+          <p>
+            This full-stack web app allows users to browse car dealerships and
+            submit reviews. Verified users can log in to leave comments and
+            ratings, while anyone can explore dealership information. The
+            platform uses Node.js, Express, MongoDB, and JavaScript to power
+            both the front and back ends.
+          </p>
         </section>
 
         <section class="tech-stack">
-        <h2>Tech Stack</h2>
-        <ul>
+          <h2>Tech Stack</h2>
+          <ul>
             <li>Frontend: HTML, CSS, JavaScript</li>
             <li>Backend: Node.js, Express</li>
             <li>Database: MongoDB with Mongoose</li>
             <li>Authentication: Express sessions</li>
             <li>Version Control: Git & GitHub</li>
-        </ul>
+          </ul>
         </section>
 
         <section class="screenshots">
-        <h2>Project Functionality</h2>
+          <h2>Project Functionality</h2>
 
-        <div class="screenshot-block">
+          <div class="screenshot-block">
             <h3>Dealership Directory</h3>
-            <p>Users can browse a list of car dealerships with location and contact information and can use a search box to find the dealerships by state.</p>
-            <div class = "photo-pair">
-                <img src="images/get_dealers.png" alt="Dealership list screenshot" />
-                <img src="images/dealersbystate.png" alt="Dealership list screenshot by state" />
+            <p>
+              Users can browse a list of car dealerships with location and
+              contact information and can use a search box to find the
+              dealerships by state.
+            </p>
+            <div class="photo-pair">
+              <img
+                src="images/get_dealers.png"
+                alt="Dealership list screenshot"
+              />
+              <img
+                src="images/dealersbystate.png"
+                alt="Dealership list screenshot by state"
+              />
             </div>
-            
-        </div>
+          </div>
 
-        <div class="screenshot-block">
+          <div class="screenshot-block">
             <h3>Dealership Details Page</h3>
-            <p>Each dealership page displays more details, including address and reviews.</p>
-            <img src="images/review_page.png" alt="Dealership details screenshot" />
-        </div>
+            <p>
+              Each dealership page displays more details, including address and
+              reviews.
+            </p>
+            <img
+              src="images/review_page.png"
+              alt="Dealership details screenshot"
+            />
+          </div>
 
-        <div class="screenshot-block">
+          <div class="screenshot-block">
             <h3>Login & Registration</h3>
-            <p>Users can register and log in to leave reviews. Sessions are handled securely.</p>
-            <div class = "photo-pair">
-                <img src="images/landing_page.png" alt="Dealership list screenshot" />
-                <img src="images/signup1.png" alt="Dealership list screenshot by state" />
+            <p>
+              Users can register and log in to leave reviews. Sessions are
+              handled securely.
+            </p>
+            <div class="photo-pair">
+              <img
+                src="images/landing_page.png"
+                alt="Dealership list screenshot"
+              />
+              <img
+                src="images/signup1.png"
+                alt="Dealership list screenshot by state"
+              />
             </div>
-            <div class = "photo-pair">
-                <img src="images/login.png" alt="Dealership list screenshot" />
-                <img src="images/logout.png" alt="Dealership list screenshot by state" />
+            <div class="photo-pair">
+              <img src="images/login.png" alt="Dealership list screenshot" />
+              <img
+                src="images/logout.png"
+                alt="Dealership list screenshot by state"
+              />
             </div>
-        </div>
+          </div>
 
-        <div class="screenshot-block">
+          <div class="screenshot-block">
             <h3>Submit a Review</h3>
-            <p>Logged-in users can rate a dealership and leave comments, which are displayed live. When a user submits a review, the site automatically analyses the tone of the comment.
-        Based on the language used, it shows a visual indicator — a happy face 😊 for positive reviews, a neutral face 😐 for mixed comments, and a sad face 😞 for negative ones.
-        This helps users quickly see overall feedback trends for each dealership.</p>
-            <div class = "photo-triple">
-                <img src="images/review.png" alt="Dealership details screenshot" />
-                <img src="images/added_review.png" alt="Dealership list screenshot" />
-                <img src="images/sentiment_analyzer.png" alt="Dealership list screenshot by state" />
+            <p>
+              Logged-in users can rate a dealership and leave comments, which
+              are displayed live. When a user submits a review, the site
+              automatically analyses the tone of the comment. Based on the
+              language used, it shows a visual indicator — a happy face 😊 for
+              positive reviews, a neutral face 😐 for mixed comments, and a sad
+              face 😞 for negative ones. This helps users quickly see overall
+              feedback trends for each dealership.
+            </p>
+            <div class="photo-triple">
+              <img
+                src="images/review.png"
+                alt="Dealership details screenshot"
+              />
+              <img
+                src="images/added_review.png"
+                alt="Dealership list screenshot"
+              />
+              <img
+                src="images/sentiment_analyzer.png"
+                alt="Dealership list screenshot by state"
+              />
             </div>
-        </div>
-     
+          </div>
 
-         <div class="screenshot-block">
+          <div class="screenshot-block">
             <h3>Static Pages</h3>
-            <p>There is also a section with a couple of static pages with information. There is the Contact Us page and the About Us page.</p>
-            <div class = "photo-pair">
-                <img src="images/contact_us.png" alt="Dealership list screenshot" />
-                <img src="images/about_us.png" alt="Dealership list screenshot by state" />
+            <p>
+              There is also a section with a couple of static pages with
+              information. There is the Contact Us page and the About Us page.
+            </p>
+            <div class="photo-pair">
+              <img
+                src="images/contact_us.png"
+                alt="Dealership list screenshot"
+              />
+              <img
+                src="images/about_us.png"
+                alt="Dealership list screenshot by state"
+              />
             </div>
-        </div>
+          </div>
         </section>
 
         <section class="github-link">
-        <h2>View on GitHub</h2>
-        <p>
-            <a href="https://github.com/TeyahC/Full-Stack-Dev-Final-Proj" target="_blank">
-            View the full project code on GitHub
+          <h2>View on GitHub</h2>
+          <p>
+            <a
+              href="https://github.com/TeyahC/Full-Stack-Dev-Final-Proj"
+              target="_blank"
+            >
+              View the full project code on GitHub
             </a>
-        </p>
+          </p>
         </section>
-         <div class="back-button">
-            <a href="index.html">← Back to Main Screen</a>
+        <div class="back-button">
+          <a href="index.html">← Back to Main Screen</a>
         </div>
-    </main>
-     
-
-  </div>
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Enlarged preview" />
-</div>
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-
-  document.querySelectorAll('.gallery img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-  }
-</script>
-
-  
-
-  <footer>
-    <div class="container">
-        <p>Made by Teyah</p>
+      </main>
     </div>
-  </footer>
-</body>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Enlarged preview" />
+    </div>
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = "flex";
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.style.display = "none";
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("section").forEach((section, i) => {
+          setTimeout(() => {
+            section.classList.add("visible");
+          }, 100 * i); // optional stagger effect
+        });
+      });
+    </script>
+
+    <footer>
+      <div class="container">
+        <p>Made by Teyah</p>
+      </div>
+    </footer>
+  </body>
 </html>

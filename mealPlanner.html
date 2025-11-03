@@ -6,30 +6,12 @@
     <title>Meal Planner App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
-  <!-- Lightbox for enlarged images -->
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="Enlarged preview" />
-  </div>
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-
-    document.addEventListener("DOMContentLoaded", () => {
-      document.querySelectorAll(".gallery img").forEach((img) => {
-        img.addEventListener("click", () => {
-          lightboxImg.src = img.src;
-          lightbox.style.display = "flex";
-        });
-      });
-    });
-
-    function closeLightbox() {
-      lightbox.style.display = "none";
-    }
-  </script>
-
   <body>
+    <!-- Lightbox for enlarged images -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <img id="lightbox-img" src="" alt="Enlarged preview" />
+    </div>
+
     <div class="container">
       <header>
         <h1>Project Walkthrough - Meal Planner App</h1>
@@ -37,6 +19,7 @@
           Personal Project – Progressive Web App with React
         </p>
       </header>
+
       <div class="back-button">
         <a href="index.html">← Back to Main Screen</a>
       </div>
@@ -65,65 +48,36 @@
 
         <section class="screenshots gallery">
           <h2>Project Functionality</h2>
-          <p style="text-align: left">
-            This section highlights the main features of the Meal Planner App,
-            including the weekly planner, recipe filtering, shopping list
-            generation, and pantry inventory management.
-          </p>
 
           <div class="screenshot-block">
             <h3>Weekly Meal Planner</h3>
-            <p>
-              Plan breakfasts, lunches, dinners, and snacks for the week in a
-              clear, mobile-friendly layout.
-            </p>
+            <p>Plan breakfasts, lunches, dinners, and snacks for the week.</p>
             <div class="video-wrapper">
-              <video
-                controls
-                preload="metadata"
-                aria-label="Meal planner weekly view demo"
-              >
+              <video controls preload="metadata">
                 <source src="images/mealplaner-weekly.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
             </div>
           </div>
 
           <div class="screenshot-block">
             <h3>Recipe Filtering & Search</h3>
-            <p>
-              Find recipes based on available ingredients, allergy preferences,
-              and meal type.
-            </p>
+            <p>Find recipes based on ingredients, allergies, and meal type.</p>
             <div class="video-wrapper">
-              <video
-                controls
-                preload="metadata"
-                aria-label="Meal planner weekly view demo"
-              >
+              <video controls preload="metadata">
                 <source src="images/mealplanner-recipes.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
               </video>
             </div>
           </div>
 
           <div class="screenshot-block">
             <h3>Smart Shopping List</h3>
-            <p>
-              Automatically generate a shopping list from planned meals, with
-              quantities scaled to the number of portions.
-            </p>
+            <p>Automatically generate a shopping list with portion scaling.</p>
             <div class="video-wrapper">
-              <video
-                controls
-                preload="metadata"
-                aria-label="Meal planner shopping list demo"
-              >
+              <video controls preload="metadata">
                 <source
                   src="images/mealplanner-shoppinglist.mp4"
                   type="video/mp4"
                 />
-                Your browser does not support the video tag.
               </video>
             </div>
           </div>
@@ -149,5 +103,31 @@
         <p>Made by Teyah</p>
       </div>
     </footer>
+
+    <script>
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".gallery img").forEach((img) => {
+          img.addEventListener("click", () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = "flex";
+          });
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.style.display = "none";
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll("section").forEach((section, i) => {
+          setTimeout(() => {
+            section.classList.add("visible");
+          }, 100 * i); // optional stagger effect
+        });
+      });
+    </script>
   </body>
 </html>

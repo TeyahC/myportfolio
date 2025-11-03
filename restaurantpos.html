@@ -1,192 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Restaurant POS System</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurant POS System</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<!-- Lightbox for enlarged images -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Enlarged preview" />
-</div>
-<script>
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
+  <!-- Lightbox for enlarged images -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Enlarged preview" />
+  </div>
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
 
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = 'flex';
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.style.display = "flex";
+        });
       });
     });
-  });
 
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-  }
-</script>
+    function closeLightbox() {
+      lightbox.style.display = "none";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("section").forEach((section, i) => {
+        setTimeout(() => {
+          section.classList.add("visible");
+        }, 100 * i); // optional stagger effect
+      });
+    });
+  </script>
 
-<body>
- 
-
-  <div class="container">
-    <header>
-    <h1>Project Walkthrough - Restaurant POS System</h1>
-    <p class="subheading">Computing Coursework Project using PHP & MySQL</p>
-    </header>
-    <div class="back-button">
+  <body>
+    <div class="container">
+      <header>
+        <h1>Project Walkthrough - Restaurant POS System</h1>
+        <p class="subheading">Computing Coursework Project using PHP & MySQL</p>
+      </header>
+      <div class="back-button">
         <a href="index.html">← Back to Main Screen</a>
-    </div>
-    <main class="content">
-      <section class="description">
-        <p>This full-stack Restaurant Point of Sale (POS) system was originally built for my Computing coursework, and I've since updated and improved it. It allows staff to manage tables, take customer orders, and handle checkouts efficiently. The system is powered by PHP and MySQL to deliver dynamic and responsive functionality.</p>
-      </section>
+      </div>
+      <main class="content">
+        <section class="description">
+          <p>
+            This full-stack Restaurant Point of Sale (POS) system was originally
+            built for my Computing coursework, and I've since updated and
+            improved it. It allows staff to manage tables, take customer orders,
+            and handle checkouts efficiently. The system is powered by PHP and
+            MySQL to deliver dynamic and responsive functionality.
+          </p>
+        </section>
 
-      <section class="tech-stack">
-        <h2>Tech Stack</h2>
-        <ul>
-          <li>Frontend: HTML, CSS</li>
-          <li>Backend: PHP</li>
-          <li>Database: MySQL</li>
-          <li>Environment: XAMPP (Apache + MySQL)</li>
-        </ul>
-      </section>
+        <section class="tech-stack">
+          <h2>Tech Stack</h2>
+          <ul>
+            <li>Frontend: HTML, CSS</li>
+            <li>Backend: PHP</li>
+            <li>Database: MySQL</li>
+            <li>Environment: XAMPP (Apache + MySQL)</li>
+          </ul>
+        </section>
 
-      <section class="screenshots gallery ">
+        <section class="screenshots gallery">
+          <h2>Project Functionality</h2>
 
-        <h2>Project Functionality</h2>
+          <p style="text-align: left">
+            This section showcases the main features of the restaurant POS
+            system, including table management, product selection, receipt
+            handling, and admin controls. You'll find explanations alongside
+            screenshots to demonstrate how staff and managers interact with the
+            system in real time.
+          </p>
 
-        <p style="text-align: left;">This section showcases the main features of the restaurant POS system, including table management, product selection, receipt handling, and admin controls. You'll find explanations alongside screenshots to demonstrate how staff and managers interact with the system in real time.</p>
-        
-        <div class="screenshot-block">
-          <h3 style="text-align: left;">Login Page</h3>
-          <p>Staff must log in before accessing the POS system.</p>
-          <img src="images/restaurant-login.png" alt="Login page" />
-        </div>
+          <div class="screenshot-block">
+            <h3 style="text-align: left">Login Page</h3>
+            <p>Staff must log in before accessing the POS system.</p>
+            <img src="images/restaurant-login.png" alt="Login page" />
+          </div>
 
-        <div class="screenshot-block">
-          <h3>Table Overview</h3>
-          <p>After login, the staff selects the table and number of guests. Once the table is active it turns green and shows the number of people at the table as the number of poeple that were entered</p>
-           <div class = "photo-triple">
-                <img src="images/tables1.png" alt="View of tables" />
-                <img src="images/tables2.png" alt="Asking how many people at table" />
-                <img src="images/tables3.png" alt="Table now its active" />
+          <div class="screenshot-block">
+            <h3>Table Overview</h3>
+            <p>
+              After login, the staff selects the table and number of guests.
+              Once the table is active it turns green and shows the number of
+              people at the table as the number of poeple that were entered
+            </p>
+            <div class="photo-triple">
+              <img src="images/tables1.png" alt="View of tables" />
+              <img
+                src="images/tables2.png"
+                alt="Asking how many people at table"
+              />
+              <img src="images/tables3.png" alt="Table now its active" />
             </div>
-        </div>
+          </div>
 
-        <div class="screenshot-block">
-          <h3>Order Page</h3>
-          <p>Each table has its own order view to manage products and quantities. As you add items to the basket the stock changes appropriately. This is all stored in the database</p>
-          <img src="images/order.png" alt="Order page" />
-        </div>
+          <div class="screenshot-block">
+            <h3>Order Page</h3>
+            <p>
+              Each table has its own order view to manage products and
+              quantities. As you add items to the basket the stock changes
+              appropriately. This is all stored in the database
+            </p>
+            <img src="images/order.png" alt="Order page" />
+          </div>
 
-        <div class="screenshot-block">
-          <h3>Product Management</h3>
-          <p>Everyone can add and edit menu items from the product management page. It also shows the list of products and here you can update or delete the products</p>
-          <img src="images/add+edit_products.png" alt="Product management page" />
-        </div>
+          <div class="screenshot-block">
+            <h3>Product Management</h3>
+            <p>
+              Everyone can add and edit menu items from the product management
+              page. It also shows the list of products and here you can update
+              or delete the products
+            </p>
+            <img
+              src="images/add+edit_products.png"
+              alt="Product management page"
+            />
+          </div>
 
-        <div class="screenshot-block">
-          <h3>Checkout</h3>
-          <p>Once the order is complete, staff can review and clear the table after payment. There is a cash or card option and there is option to spilt the bill too. </p>
-           <div class = "photo-triple">
-                <img src="images/Checkout1.png" alt="Checkout" />
-                <img src="images/checkout2.png" alt="After checkout button is pressed " />
-                <img src="images/checkout3.png" alt="Table not active" />
+          <div class="screenshot-block">
+            <h3>Checkout</h3>
+            <p>
+              Once the order is complete, staff can review and clear the table
+              after payment. There is a cash or card option and there is option
+              to spilt the bill too.
+            </p>
+            <div class="photo-triple">
+              <img src="images/Checkout1.png" alt="Checkout" />
+              <img
+                src="images/checkout2.png"
+                alt="After checkout button is pressed "
+              />
+              <img src="images/checkout3.png" alt="Table not active" />
             </div>
-        </div>
+          </div>
 
-        <div class="screenshot-block">
+          <div class="screenshot-block">
             <h2>System Control</h2>
-            <p>There is a System Control page that includes links to view receipts and access the User Management section. From there, admins can manage user accounts, including adding, editing, or removing users. If a staff member (non-admin) tries to access the user management features, they will see an "Access Denied" message. </p>
+            <p>
+              There is a System Control page that includes links to view
+              receipts and access the User Management section. From there,
+              admins can manage user accounts, including adding, editing, or
+              removing users. If a staff member (non-admin) tries to access the
+              user management features, they will see an "Access Denied"
+              message.
+            </p>
             <img src="images/systemcontrol.png" alt="Add or change users " />
             <img src="images/denied.png" alt="Add or change users " />
-            <h3>User Management </h3>
-            <p>Admins, such as the manager, can add or edit user accounts and update passwords. All user information is stored securely in a database, with passwords hashed for protection </p>
-            <div class = "photo-pair">
-                    <img src="images/Register Staff.png" alt="Register staff page " />
-                    <img src="images/Success message.png" alt="Success message" />
-                </div>
-                <div class = "photo-pair">
-                    <img src="images/Addorchangeusers.png" alt="Add or change users " />
-                    <img src="images/Password security.png" alt="Hashed Passwords " />
-                </div>
-                <h3>Receipt Management </h3>
-                <p>All staff members have access to view receipts. Once viewed, they also have the option to delete receipts or download them as PDF files for record-keeping.</p>
-                <div class = "photo-pair">
-                    <img src="images/receipts.png" alt="Receipts Page " />
-                    <img src="images/receiptpdf.png" alt="As a pdf" />
-                </div>
+            <h3>User Management</h3>
+            <p>
+              Admins, such as the manager, can add or edit user accounts and
+              update passwords. All user information is stored securely in a
+              database, with passwords hashed for protection
+            </p>
+            <div class="photo-pair">
+              <img src="images/Register Staff.png" alt="Register staff page " />
+              <img src="images/Success message.png" alt="Success message" />
             </div>
+            <div class="photo-pair">
+              <img
+                src="images/Addorchangeusers.png"
+                alt="Add or change users "
+              />
+              <img src="images/Password security.png" alt="Hashed Passwords " />
+            </div>
+            <h3>Receipt Management</h3>
+            <p>
+              All staff members have access to view receipts. Once viewed, they
+              also have the option to delete receipts or download them as PDF
+              files for record-keeping.
+            </p>
+            <div class="photo-pair">
+              <img src="images/receipts.png" alt="Receipts Page " />
+              <img src="images/receiptpdf.png" alt="As a pdf" />
+            </div>
+          </div>
         </section>
 
         <section class="code-snippets gallery">
-            <h2>Key Code Snippets</h2>
-            <p>Below are a few core code snippets that highlight the functionality and logic behind the restaurant POS system.</p>
+          <h2>Key Code Snippets</h2>
+          <p>
+            Below are a few core code snippets that highlight the functionality
+            and logic behind the restaurant POS system.
+          </p>
 
-            <div class="code-block">
-                <h3>Hashed Password Storage</h3>
-                <p>To protect user security, passwords are hashed before being stored in the database:</p>
-                <img src="images/hashpasswordcode.png" alt="code for password hashing" />
-            </div>
+          <div class="code-block">
+            <h3>Hashed Password Storage</h3>
+            <p>
+              To protect user security, passwords are hashed before being stored
+              in the database:
+            </p>
+            <img
+              src="images/hashpasswordcode.png"
+              alt="code for password hashing"
+            />
+          </div>
 
-            <div class="code-block">
-                <h3>Access Control for Staff</h3>
-                <p>This logic ensures that only users with the admin role can access restricted pages like user management:</p>
-                <img src="images/admin access code.png" alt="code for admin accessing" />
-            </div>
+          <div class="code-block">
+            <h3>Access Control for Staff</h3>
+            <p>
+              This logic ensures that only users with the admin role can access
+              restricted pages like user management:
+            </p>
+            <img
+              src="images/admin access code.png"
+              alt="code for admin accessing"
+            />
+          </div>
 
-            <div class="code-block">
-                <h3>Generate PDF Receipt</h3>
-                <p>Staff members can view receipts and generate a downloadable PDF version for printing or saving:</p>
-                <div class = "photo-pair">
-                    <img src="images/pdfcode1.png" alt="Code for turning receipt to a pdf" />
-                    <img src="images/reciptpdf2.png" alt="Code for turning receipt to a pdf" />
-                </div>
+          <div class="code-block">
+            <h3>Generate PDF Receipt</h3>
+            <p>
+              Staff members can view receipts and generate a downloadable PDF
+              version for printing or saving:
+            </p>
+            <div class="photo-pair">
+              <img
+                src="images/pdfcode1.png"
+                alt="Code for turning receipt to a pdf"
+              />
+              <img
+                src="images/reciptpdf2.png"
+                alt="Code for turning receipt to a pdf"
+              />
             </div>
+          </div>
 
-            <div class="code-block">
-                <h3>Smart Order Handling</h3>
-                <p>This code checks whether a table already has an open order. If not, it creates one. It then either updates the quantity of an existing product or adds it as a new item. Finally, it decreases the product stock and redirects the user back to the table view.</p>
-                <img src="images/itemstoordercode.png" alt="code for order handling" />
-            </div>
+          <div class="code-block">
+            <h3>Smart Order Handling</h3>
+            <p>
+              This code checks whether a table already has an open order. If
+              not, it creates one. It then either updates the quantity of an
+              existing product or adds it as a new item. Finally, it decreases
+              the product stock and redirects the user back to the table view.
+            </p>
+            <img
+              src="images/itemstoordercode.png"
+              alt="code for order handling"
+            />
+          </div>
 
-            <div class="code-block">
-                <h3>Secure Login Authentication</h3>
-                <p>This login system securely checks the user’s credentials using hashed passwords and starts a session on success.</p>
-                <img src="images/login_auth.png" alt="Code snippet for login with password verification" />
-            </div>
- 
+          <div class="code-block">
+            <h3>Secure Login Authentication</h3>
+            <p>
+              This login system securely checks the user’s credentials using
+              hashed passwords and starts a session on success.
+            </p>
+            <img
+              src="images/login_auth.png"
+              alt="Code snippet for login with password verification"
+            />
+          </div>
         </section>
 
-        
-       
+        <section class="github-link">
+          <h2>View on GitHub</h2>
+          <p>
+            <a href="https://github.com/TeyahC/Restaurant-POS" target="_blank">
+              View the full project code on GitHub
+            </a>
+          </p>
+        </section>
 
-
-
-      <section class="github-link">
-        <h2>View on GitHub</h2>
-        <p>
-          <a href="https://github.com/TeyahC/Restaurant-POS" target="_blank">
-            View the full project code on GitHub
-          </a>
-        </p>
-      </section>
-
-       <div class="back-button">
-        <a href="index.html">← Back to Main Screen</a>
+        <div class="back-button">
+          <a href="index.html">← Back to Main Screen</a>
         </div>
-
-    </main>
-  </div>
-
-  <footer>
-    <div class="container">
-        <p>Made by Teyah</p>
+      </main>
     </div>
-  </footer>
-</body>
+
+    <footer>
+      <div class="container">
+        <p>Made by Teyah</p>
+      </div>
+    </footer>
+  </body>
 </html>
