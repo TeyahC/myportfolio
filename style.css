@@ -470,7 +470,12 @@ section.visible {
   }
 
   header h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* scales down nicely on phones */
+  }
+
+  header .subheading,
+  header .tagline {
+    font-size: 1.1rem; /* optional: scale down subtitles too */
   }
 }
 
