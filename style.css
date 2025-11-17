@@ -460,25 +460,6 @@ section.visible {
   transform: translateY(0);
 }
 
-/* ===== Responsive tweaks ===== */
-@media (max-width: 700px) {
-  .video-wrapper {
-    max-height: 400px;
-  }
-  .github-link a {
-    padding: 10px 20px;
-  }
-
-  header h1 {
-    font-size: 2rem; /* scales down nicely on phones */
-  }
-
-  header .subheading,
-  header .tagline {
-    font-size: 1.1rem; /* optional: scale down subtitles too */
-  }
-}
-
 /* ===== Body & Container Upgrade ===== */
 body {
   background: linear-gradient(120deg, #f7f8fa, #e2e6eb);
@@ -723,4 +704,84 @@ h2::after {
 h2:hover::after {
   width: 100px;
   background: #bf0d1c;
+}
+
+/* ===== Responsive / Mobile Tweaks ===== */
+@media (max-width: 768px) {
+  /* Header */
+  header {
+    padding: 2rem 1rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  header h1 {
+    font-size: 2rem; /* smaller for mobile */
+    line-height: 1.2;
+  }
+
+  header .subheading,
+  header .tagline {
+    font-size: 1.1rem;
+  }
+
+  /* Hero Section */
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Section adjustments */
+  section {
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 15px;
+  }
+
+  /* Section Titles */
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Bottom cards */
+  .bottom-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Contact grid */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  /* Video wrapper */
+  .video-wrapper {
+    max-height: 350px;
+  }
+
+  /* Gallery Images */
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Buttons */
+  .back-button a,
+  .github-link a,
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
 }
