@@ -468,6 +468,10 @@ section.visible {
   .github-link a {
     padding: 10px 20px;
   }
+
+  header h1 {
+    font-size: 2rem;
+  }
 }
 
 /* ===== Body & Container Upgrade ===== */
